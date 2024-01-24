@@ -116,3 +116,8 @@ Domain Models:
 8.  | Objects | Properties                        | Messages            | Output     |
     | ------- | --------------------------------- | ------------------- | ---------- |
     | Account | transactions @Array[@Transaction] | printTransactions() | @undefined |
+
+Tests:
+
+1. a. Should create a new instance of Account from txt file.
+   b. Account id should be 1234
