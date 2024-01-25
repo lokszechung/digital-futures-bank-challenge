@@ -71,10 +71,11 @@ User Stories:
 3. As a user, I want to be able to deposit money into my account, so that I can save money.
 4. As a user, I want to be able to withdraw money from my account, so that I can use my money.
 5. As a user, I want to not be able to withdraw more money than in my account, because I don't want to use money that is not mine.
-6. As a bank, I want to be able to record the amount of a transaction, so that I have a record of all transactions.
-7. As a bank, I want to be able to record the type of a transaction, so that I have a record of all transactions.
-8. As a bank, I want to be able to record the date of a transaction, so that I have a record of all transactions.
-9. As a user, I want to be able to print a statement, so that I can check my transactions.
+6. As a bank, I want to be able to create a transaction, so I can record customers' transactions.
+7. As a bank, I want to be able to record the amount of a transaction, so that I have a record of all transaction amounts.
+8. As a bank, I want to be able to record the type of a transaction, so that I have a record of all transaction types.
+9. As a bank, I want to be able to record the date of a transaction, so that I have a record of all transaction dates.
+10. As a user, I want to be able to print a statement, so that I can check my transactions.
 
 Domain Models:
 
@@ -133,3 +134,5 @@ Tests:
 4. a. Withdrawing funds should decrease the balance by the withdrawn amount
 
 5. a. Funds should not be removed if withdrawal amount is greater than the balance
+
+6. a. Should create a new instance of Transaction.
