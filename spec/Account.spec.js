@@ -27,5 +27,5 @@ describe("Accounts tests", () => {
       expect(testAccount.getBalance()).toEqual(100);
     });
   })
-
+  
 })
