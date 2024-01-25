@@ -67,13 +67,14 @@ Requirements:
 User Stories:
 
 1. As a user, I want to be able to access my account, so that I can manage my finances.
-2. As a user, I want to be able to deposit money into my account, so that I can save money.
-3. As a user, I want to be able to withdraw money from my account, so that I can use my money.
-4. As a user, I want to not be able to withdraw more money than in my account, because I don't want to use money that is not mine.
-5. As a bank, I want to be able to record the amount of a transaction, so that I have a record of all transactions.
-6. As a bank, I want to be able to record the type of a transaction, so that I have a record of all transactions.
-7. As a bank, I want to be able to record the date of a transaction, so that I have a record of all transactions.
-8. As a user, I want to be able to print a statement, so that I can check my transactions.
+2. As a user, I want to be able to see my balance, so I can know my financial position.
+3. As a user, I want to be able to deposit money into my account, so that I can save money.
+4. As a user, I want to be able to withdraw money from my account, so that I can use my money.
+5. As a user, I want to not be able to withdraw more money than in my account, because I don't want to use money that is not mine.
+6. As a bank, I want to be able to record the amount of a transaction, so that I have a record of all transactions.
+7. As a bank, I want to be able to record the type of a transaction, so that I have a record of all transactions.
+8. As a bank, I want to be able to record the date of a transaction, so that I have a record of all transactions.
+9. As a user, I want to be able to print a statement, so that I can check my transactions.
 
 Domain Models:
 
@@ -83,41 +84,46 @@ Domain Models:
 
     //// dont need an 'access' function, can assume that the account is already the correct user upon loading
 
-2.  | Objects | Properties      | Messages         | Output     |
+2.  | Objects | Properties      | Messages     | Output     |
+    | ------- | --------------- | ------------ | ---------- |
+    | Account | balance @Number | getBalance() | @undefined |
+
+3.  | Objects | Properties      | Messages         | Output     |
     | ------- | --------------- | ---------------- | ---------- |
     | Account | balance @Number | deposit(@Number) | @undefined |
-
-3.  | Objects | Properties      | Messages          | Output     |
-    | ------- | --------------- | ----------------- | ---------- |
-    | Account | balance @Number | withdraw(@Number) | @undefined |
 
 4.  | Objects | Properties      | Messages          | Output     |
     | ------- | --------------- | ----------------- | ---------- |
     | Account | balance @Number | withdraw(@Number) | @undefined |
 
-5.  | Objects     | Properties                        | Messages             | Output     |
-    | ----------- | --------------------------------- | -------------------- | ---------- |
-    | Transaction | amount @Number                    |                      |            |
-    | Account     | transactions @Array[@Transaction] | record(@Transaction) | @undefined |
+5.  | Objects | Properties      | Messages          | Output     |
+    | ------- | --------------- | ----------------- | ---------- |
+    | Account | balance @Number | withdraw(@Number) | @undefined |
 
 6.  | Objects     | Properties                        | Messages             | Output     |
     | ----------- | --------------------------------- | -------------------- | ---------- |
     | Transaction | amount @Number                    |                      |            |
-    |             | type @String                      |                      |            |
     | Account     | transactions @Array[@Transaction] | record(@Transaction) | @undefined |
 
 7.  | Objects     | Properties                        | Messages             | Output     |
     | ----------- | --------------------------------- | -------------------- | ---------- |
     | Transaction | amount @Number                    |                      |            |
     |             | type @String                      |                      |            |
+    | Account     | transactions @Array[@Transaction] | record(@Transaction) | @undefined |
+
+8.  | Objects     | Properties                        | Messages             | Output     |
+    | ----------- | --------------------------------- | -------------------- | ---------- |
+    | Transaction | amount @Number                    |                      |            |
+    |             | type @String                      |                      |            |
     |             | date @Date                        |                      |            |
     | Account     | transactions @Array[@Transaction] | record(@Transaction) | @undefined |
 
-8.  | Objects | Properties                        | Messages            | Output     |
+9.  | Objects | Properties                        | Messages            | Output     |
     | ------- | --------------------------------- | ------------------- | ---------- |
     | Account | transactions @Array[@Transaction] | printTransactions() | @undefined |
 
 Tests:
 
 1. a. Should create a new instance of Account from txt file.
-   b. Account id should be 1234
+
+2. a. Depositing 100 should increase the balance by 100
