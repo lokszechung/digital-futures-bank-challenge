@@ -17,7 +17,9 @@ class Account {
   }
 
   withdraw(amount){
-    return this.#balance -= amount 
+    if(amount <= this.#balance){
+      return this.#balance -= amount 
+    }
   }
 }
 

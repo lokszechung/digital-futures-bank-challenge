@@ -37,6 +37,15 @@ describe("Accounts tests", () => {
 
       expect(testAccount.getBalance()).toEqual(90);
     });
+
+    it("Funds should not be removed if withdrawal amount is greater than the balance", () => {
+      
+      const testAccount = new Account();
+      testAccount.deposit(100)
+      testAccount.withdraw(120)
+
+      expect(testAccount.getBalance()).toEqual(100);
+    });
   })
 
 })

@@ -131,3 +131,5 @@ Tests:
 3. a. Depositing funds should increase the balance by the deposited amount
 
 4. a. Withdrawing funds should decrease the balance by the withdrawn amount
+
+5. a. Funds should not be removed if withdrawal amount is greater than the balance
