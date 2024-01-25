@@ -124,6 +124,10 @@ Domain Models:
 
 Tests:
 
-1. a. Should create a new instance of Account from txt file.
+1. a. Should create a new instance of Account.
 
-2. a. Depositing 100 should increase the balance by 100
+2. a. getBalance() should return 0 when balance is 0
+
+3. a. Depositing funds should increase the balance by the deposited amount
+
+4. a. Withdrawing funds should decrease the balance by the withdrawn amount

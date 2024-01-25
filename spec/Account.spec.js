@@ -27,5 +27,16 @@ describe("Accounts tests", () => {
       expect(testAccount.getBalance()).toEqual(100);
     });
   })
-  
+
+  describe("Withdraw funds tests", () => {
+    it("Withdrawing funds should decrease the balance by the withdrawn amount", () => {
+      
+      const testAccount = new Account();
+      testAccount.deposit(100)
+      testAccount.withdraw(10)
+
+      expect(testAccount.getBalance()).toEqual(90);
+    });
+  })
+
 })
