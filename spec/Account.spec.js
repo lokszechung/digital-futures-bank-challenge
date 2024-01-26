@@ -15,7 +15,7 @@ describe("Accounts tests", () => {
       
       const testAccount = new Account();
 
-      expect(testAccount.getBalance()).toEqual(0);
+      expect(testAccount.getBalance()).toBe(0);
     });
 
   })
@@ -27,9 +27,9 @@ describe("Accounts tests", () => {
       const testAccount = new Account();
       testAccount.deposit(100)
 
-      expect(testAccount.getBalance()).toEqual(100);
+      expect(testAccount.getBalance()).toBe(100);
     });
-    
+
   })
 
   describe("Withdraw funds tests", () => {
@@ -40,7 +40,7 @@ describe("Accounts tests", () => {
       testAccount.deposit(100)
       testAccount.withdraw(10)
 
-      expect(testAccount.getBalance()).toEqual(90);
+      expect(testAccount.getBalance()).toBe(90);
     });
 
     it("Funds should not be removed if withdrawal amount is greater than the balance", () => {
@@ -49,7 +49,7 @@ describe("Accounts tests", () => {
       testAccount.deposit(100)
       testAccount.withdraw(120)
 
-      expect(testAccount.getBalance()).toEqual(100);
+      expect(testAccount.getBalance()).toBe(100);
     });
 
   })
