@@ -1,7 +1,10 @@
+
+
 class Account {
   static #nextId = 1234;
   #id
   #balance
+  #transactions = []
 
   constructor(){
     this.#id = Account.#nextId++
@@ -20,6 +23,10 @@ class Account {
     if(amount <= this.#balance){
       return this.#balance -= amount 
     }
+  }
+
+  logTransaction(amount){
+    
   }
 }
 

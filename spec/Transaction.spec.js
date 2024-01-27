@@ -22,7 +22,7 @@ describe("Transaction tests", () => {
     it("Given an amount, transaction should be created with amount recorded", () => {
       
       const amount = 100
-      const type = "deposit"
+      const type = "debit"
       const date = new Date()
       const testTransaction = new Transaction(amount, type, date);
 
