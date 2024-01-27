@@ -56,16 +56,17 @@ describe("Accounts tests", () => {
 
   describe("Log transaction tests", () => {
 
-    it("Logging transaction should increase the transactions array by 1", () => {
-      
-      const amount = 100
-      const type = "debit"
-      const date = new Date()
+    it("Logging transaction should add new transaction to transactions array", () => {
 
       const testAccount = new Account();
-      testAccount.logTransaction(amount, type, date)
+      const testTransaction = jasmine.createSpyObj("testTransaction", {
+        getAmount: "100"
+      })
+      
+      testAccount.logTransaction(testTransaction)
+      const transactionAdded = testAccount.getTransactions()[0]
 
-      expect(testAccount.getTransactions().length).toBe(1);
+      expect(transactionAdded).toEqual(testTransaction);
     });
 
     

@@ -30,8 +30,7 @@ class Account {
     }
   }
 
-  logTransaction(amount, type, date){
-    const transaction = TransactionHelper.createTransaction(amount,type,date)
+  logTransaction(transaction){
     this.#transactions.push(transaction)
   }
 }
