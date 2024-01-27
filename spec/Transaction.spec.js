@@ -19,7 +19,7 @@ describe("Transaction tests", () => {
 
   describe("Deposit record transaction", () => {
 
-    it("Given an amount, transaction should be created with amount recorded", () => {
+    it("Given transaction details, transaction should be created with details recorded", () => {
       
       const amount = 100
       const type = "debit"

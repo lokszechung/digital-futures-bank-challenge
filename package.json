@@ -8,6 +8,7 @@
     "doc": "docs"
   },
   "scripts": {
+    "start": "node src/index.js",
     "test": "jasmine"
   },
   "keywords": [],
