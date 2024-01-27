@@ -1,3 +1,4 @@
+import TransactionHelper from "./TransactionHelper.js";
 
 
 class Account {
@@ -15,6 +16,10 @@ class Account {
     return this.#balance;
   }
 
+  getTransactions() {
+    return this.#transactions
+  }
+
   deposit(amount){
     return this.#balance += amount 
   }
@@ -25,8 +30,9 @@ class Account {
     }
   }
 
-  logTransaction(amount){
-    
+  logTransaction(amount, type, date){
+    const transaction = TransactionHelper.createTransaction(amount,type,date)
+    this.#transactions.push(transaction)
   }
 }
 

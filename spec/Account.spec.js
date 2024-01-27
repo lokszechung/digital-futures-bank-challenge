@@ -54,4 +54,21 @@ describe("Accounts tests", () => {
 
   })
 
+  describe("Log transaction tests", () => {
+
+    it("Logging transaction should increase the transactions array by 1", () => {
+      
+      const amount = 100
+      const type = "debit"
+      const date = new Date()
+
+      const testAccount = new Account();
+      testAccount.logTransaction(amount, type, date)
+
+      expect(testAccount.getTransactions().length).toBe(1);
+    });
+
+    
+  })
+
 })
