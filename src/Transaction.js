@@ -4,12 +4,14 @@ class Transaction {
   #amount
   #type
   #date
+  #balance
 
-  constructor(amount, type, date){
+  constructor(amount, type, date, balance){
     this.#id = Transaction.#nextId++
     this.#amount = amount
     this.#type = type
     this.#date = date
+    this.#balance = balance
   }
 
   getAmount(){
@@ -22,6 +24,10 @@ class Transaction {
 
   getDate(){
     return this.#date
+  }
+
+  getBalance(){
+    return this.#balance
   }
 }
 
