@@ -72,10 +72,8 @@ User Stories:
 4. As a user, I want to be able to withdraw money from my account, so that I can use my money.
 5. As a user, I want to not be able to withdraw more money than in my account, because I don't want to use money that is not mine.
 6. As a bank, I want to be able to create a transaction, so I can record customers' transactions.
-7. As a bank, I want to be able to record the amount of a transaction, so that I have a record of all transaction amounts.
-8. As a bank, I want to be able to record the type of a transaction, so that I have a record of all transaction types.
-9. As a bank, I want to be able to record the date of a transaction, so that I have a record of all transaction dates.
-10. As a user, I want to be able to print a statement, so that I can check my transactions.
+7. As a bank, I want to be able to record the amount, type and date of a transaction, so that I have a record of all transaction details.
+8. As a user, I want to be able to print a statement, so that I can check my transactions.
 
 Domain Models:
 
@@ -101,25 +99,21 @@ Domain Models:
     | ------- | --------------- | ----------------- | ---------- |
     | Account | balance @Number | withdraw(@Number) | @undefined |
 
-6.  | Objects     | Properties                        | Messages             | Output     |
-    | ----------- | --------------------------------- | -------------------- | ---------- |
-    | Transaction | amount @Number                    |                      |            |
-    | Account     | transactions @Array[@Transaction] | record(@Transaction) | @undefined |
+6.  | Objects           | Properties                        | Messages                           | Output       |
+    | ----------------- | --------------------------------- | ---------------------------------- | ------------ |
+    | Transaction       | amount @Number                    |                                    |              |
+    | Account           | transactions @Array[@Transaction] | record(@Transaction)               | @undefined   |
+    |                   |                                   | logTransaction(amount, type, date) | @Transaction |
+    | TransactionHelper |                                   |                                    |              |
 
-7.  | Objects     | Properties                        | Messages             | Output     |
-    | ----------- | --------------------------------- | -------------------- | ---------- |
-    | Transaction | amount @Number                    |                      |            |
-    |             | type @String                      |                      |            |
-    | Account     | transactions @Array[@Transaction] | record(@Transaction) | @undefined |
+| 7 .         | Objects                           | Properties           | Messages   | Output |
+| ----------- | --------------------------------- | -------------------- | ---------- | ------ |
+| Transaction | amount @Number                    |                      |            |
+|             | type @String                      |                      |            |
+|             | date @Date                        |                      |            |
+| Account     | transactions @Array[@Transaction] | record(@Transaction) | @undefined |
 
-8.  | Objects     | Properties                        | Messages             | Output     |
-    | ----------- | --------------------------------- | -------------------- | ---------- |
-    | Transaction | amount @Number                    |                      |            |
-    |             | type @String                      |                      |            |
-    |             | date @Date                        |                      |            |
-    | Account     | transactions @Array[@Transaction] | record(@Transaction) | @undefined |
-
-9.  | Objects | Properties                        | Messages            | Output     |
+8.  | Objects | Properties                        | Messages            | Output     |
     | ------- | --------------------------------- | ------------------- | ---------- |
     | Account | transactions @Array[@Transaction] | printTransactions() | @undefined |
 

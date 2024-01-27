@@ -22,9 +22,13 @@ describe("Transaction tests", () => {
     it("Given an amount, transaction should be created with amount recorded", () => {
       
       const amount = 100
-      const testTransaction = new Transaction(amount);
+      const type = "deposit"
+      const date = new Date()
+      const testTransaction = new Transaction(amount, type, date);
 
       expect(testTransaction.getAmount()).toBe(amount);
+      expect(testTransaction.getType()).toBe(type);
+      expect(testTransaction.getDate()).toBe(date);
     });
 
   })
