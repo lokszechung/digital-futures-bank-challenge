@@ -21,7 +21,7 @@ class Account {
   }
 
   deposit(amount){
-    return this.#balance += amount 
+    return this.#balance += amount
   }
 
   withdraw(amount){
@@ -35,7 +35,7 @@ class Account {
   }
 
   printTransactions(){
-    console.log(`date || credit || debit || balance`)
+    console.log(`date       || credit     || debit      || balance`)
     this.#transactions.forEach((transaction) => {
       TransactionPrinter.printTransaction(transaction)
     })
