@@ -60,7 +60,7 @@ describe("Accounts tests", () => {
 
       const testAccount = new Account();
       const testTransaction = jasmine.createSpyObj("testTransaction", {
-        getAmount: "100"
+        getAmount: 100
       })
       
       testAccount.logTransaction(testTransaction)
@@ -69,7 +69,28 @@ describe("Accounts tests", () => {
       expect(transactionAdded).toEqual(testTransaction);
     });
 
-    
+  })
+
+  describe("Print transaction tests", () => {
+
+    it("Should call console.log 2 times when printTransaction is called", () => {
+
+      const testAccount = new Account();
+      const logSpy = spyOn(console, `log`);
+      const testTransaction = jasmine.createSpyObj("testTransaction", {
+        getDate: "27/01/2024",
+        getType: "credit",
+        getAmount: 1000,
+        getBalance: 4000
+      })
+      
+      testAccount.logTransaction(testTransaction)
+
+      testAccount.printTransactions()
+
+      expect(logSpy).toHaveBeenCalledTimes(2)
+    })
+
   })
 
 })

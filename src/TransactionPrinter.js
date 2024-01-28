@@ -19,7 +19,6 @@ class TransactionPrinter {
         ${transaction.getAmount()} || 
         ${transaction.getBalance()}
       `)
-
       
   }
 }

@@ -1,4 +1,4 @@
-// import TransactionHelper from "./TransactionHelper.js";
+import TransactionPrinter from "./TransactionPrinter.js";
 
 
 class Account {
@@ -32,6 +32,13 @@ class Account {
 
   logTransaction(transaction){
     this.#transactions.push(transaction)
+  }
+
+  printTransactions(){
+    console.log(`date || credit || debit || balance`)
+    this.#transactions.forEach((transaction) => {
+      TransactionPrinter.printTransaction(transaction)
+    })
   }
 }
 
