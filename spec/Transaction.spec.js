@@ -19,7 +19,7 @@ describe("Transaction tests", () => {
       
       const amount = 100
       const type = "debit"
-      const date = new Date()
+      const date = "29/01/2024" 
       const balance = 200
       const testTransaction = new Transaction(amount, type, date, balance);
 
