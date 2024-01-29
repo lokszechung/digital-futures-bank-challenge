@@ -91,6 +91,36 @@ describe("Accounts tests", () => {
       expect(logSpy).toHaveBeenCalledTimes(2)
     })
 
+    it("Should print transactions in reverse order", () => {
+      const testAccount = new Account();
+      const logSpy = spyOn(console, `log`);
+
+      const testTransaction1 = jasmine.createSpyObj("testTransaction", {
+        getDate: "01/01/2024",
+        getType: "credit",
+        getAmount: 1000,
+        getBalance: 4000
+      })
+      const testTransaction2 = jasmine.createSpyObj("testTransaction", {
+        getDate: "01/02/2024",
+        getType: "debit",
+        getAmount: 100,
+        getBalance: 400
+      })
+
+      testAccount.logTransaction(testTransaction1)
+      testAccount.logTransaction(testTransaction2)
+
+      testAccount.printTransactions()
+
+      expect(logSpy.calls.allArgs()).toEqual([
+        ["date       || credit     || debit      || balance"],
+        ["01/02/2024 ||            || 100.00     || 400.00"],
+        ["01/01/2024 || 1000.00    ||            || 4000.00"],
+      ])
+
+    })
+
   })
 
 })

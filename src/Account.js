@@ -36,7 +36,8 @@ class Account {
 
   printTransactions(){
     console.log(`date       || credit     || debit      || balance`)
-    this.#transactions.forEach((transaction) => {
+    const reversed = [...this.#transactions].reverse()
+    reversed.forEach((transaction) => {
       TransactionPrinter.printTransaction(transaction)
     })
   }
