@@ -7,7 +7,7 @@ class Account {
   #balance
   #transactions = []
 
-  constructor(){
+  constructor() {
     this.#id = Account.#nextId++
     this.#balance = 0
   }
@@ -20,21 +20,21 @@ class Account {
     return this.#transactions
   }
 
-  deposit(amount){
+  deposit(amount) {
     return this.#balance += amount
   }
 
   withdraw(amount){
-    if(amount <= this.#balance){
-      return this.#balance -= amount 
+    if(amount <= this.#balance) {
+      return this.#balance -= amount
     }
   }
 
-  logTransaction(transaction){
+  logTransaction(transaction) {
     this.#transactions.push(transaction)
   }
 
-  printTransactions(){
+  printTransactions() {
     console.log(`date       || credit     || debit      || balance`)
     const reversed = [...this.#transactions].reverse()
     reversed.forEach((transaction) => {

@@ -51,7 +51,7 @@ describe("Accounts tests", () => {
 
       expect(testAccount.getBalance()).toBe(100);
     });
-
+    
   })
 
   describe("Log transaction tests", () => {
@@ -92,8 +92,8 @@ describe("Accounts tests", () => {
     })
 
     it("Should print transactions in reverse order", () => {
-      const testAccount = new Account();
-      const logSpy = spyOn(console, `log`);
+      const testAccount = new Account()
+      const logSpy = spyOn(console, `log`)
 
       const testTransaction1 = jasmine.createSpyObj("testTransaction", {
         getDate: "01/01/2024",
