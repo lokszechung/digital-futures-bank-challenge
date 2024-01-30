@@ -2,7 +2,7 @@ import TransactionPrinter from "../src/TransactionPrinter.js";
 
 describe("TransactionPrinter tests", () => {
   
-  it("Should call console.log 1 times when printTransaction is called", () => {
+  it("Should call console.log 1 time when printTransaction is called", () => {
     const logSpy = spyOn(console, 'log')
     const testTransaction = jasmine.createSpyObj("testTransaction", {
       getDate: "27/01/2024",
